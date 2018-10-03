@@ -39,7 +39,10 @@ $('#submit-button').on('click', function(event) {
     $('#next-arrival-input').val('');
 
     // Get the current timestamp
+    var currentTime = moment().format('HH:mm');
+    console.log(currentTime);
     // Calculate difference between timestamp and next arrival
+    console.log(nextArrivalInput);
 
 }); // End submit button listener
 
@@ -60,4 +63,5 @@ database.ref().on('child_added', function(childSnapshot) {
     );
 
     $('#my-railnote > tbody').append(newRow);
-}); // End Firebase event
+}); // End Firebase data write/retrieve event
+
